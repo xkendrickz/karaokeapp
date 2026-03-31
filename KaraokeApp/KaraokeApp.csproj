@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>KaraokeApp</AssemblyName>
+    <RootNamespace>KaraokeApp</RootNamespace>
+    <Nullable>disable</Nullable>
+    <LangVersion>7.3</LangVersion>
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>x64</Platforms>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+	<PublishSingleFile>true</PublishSingleFile>
+	<SelfContained>true</SelfContained>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- System.Net.Http must be explicitly referenced in .NET 4.8 -->
+    <Reference Include="System.Net.Http" />
+    <!-- System.IO.Compression for ZIP extraction -->
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <!-- SQLite embedded database -->
+    <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
+    <!-- VLC media player wrapper (supports MP4, MKV, MPG, DAT, CDG, M4A, etc.) -->
+    <PackageReference Include="LibVLCSharp" Version="3.8.2" />
+    <PackageReference Include="LibVLCSharp.WPF" Version="3.8.2" />
+    <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.21" />
+    <!-- Embedded Chromium browser for YouTube playback -->
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2739.15" />
+    <!-- JSON parsing for YouTube API responses -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Ensure XAML resource dictionary is included -->
+    <Resource Include="Resources\Styles.xaml" />
+  </ItemGroup>
+
+</Project>
