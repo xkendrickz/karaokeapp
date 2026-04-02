@@ -146,7 +146,7 @@ namespace KaraokeApp
             var btn = new ToggleButton
             {
                 Content = cat.Name.ToUpper(),
-                Style   = (Style)FindResource("CatBtn"),
+                Style   = (Style)Application.Current.FindResource("CatBtn"),
                 Tag     = cat.Id
             };
             btn.Click += CategoryButton_Click;
@@ -534,7 +534,7 @@ namespace KaraokeApp
         private void BtnVolumeDown_Click(object sender, RoutedEventArgs e)
             => VolumeSlider.Value = Math.Max(0, VolumeSlider.Value - 5);
         private void BtnVolumeUp_Click(object sender, RoutedEventArgs e)
-            => VolumeSlider.Value = Math.Min(200, VolumeSlider.Value + 5);
+            => VolumeSlider.Value = Math.Min(100, VolumeSlider.Value + 5);
 
         private void PitchSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {

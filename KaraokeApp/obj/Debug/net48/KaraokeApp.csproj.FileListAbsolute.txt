@@ -879,3 +879,4 @@ C:\Users\asus\Desktop\KaraokeApp\KaraokeApp\obj\Debug\net48\KaraokeApp.csproj.Co
 C:\Users\asus\Desktop\KaraokeApp\KaraokeApp\obj\Debug\net48\KaraokeApp.csproj.Up2Date
 C:\Users\asus\Desktop\KaraokeApp\KaraokeApp\obj\Debug\net48\KaraokeApp.exe
 C:\Users\asus\Desktop\KaraokeApp\KaraokeApp\obj\Debug\net48\KaraokeApp.pdb
+C:\Users\asus\Desktop\KaraokeApp\KaraokeApp\obj\Debug\net48\KaraokeApp.sourcelink.json

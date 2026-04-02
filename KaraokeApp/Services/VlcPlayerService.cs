@@ -83,9 +83,8 @@ namespace KaraokeApp.Services
             _hasVocalTrack = hasVocalTrack;
 
             string playPath = filePath;
-
-            // If it's a ZIP file, extract to temp dir and find the CDG or video file
-            if (string.Equals(Path.GetExtension(filePath), ".zip", StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(Path.GetExtension(filePath), ".zip",
+                StringComparison.OrdinalIgnoreCase))
             {
                 playPath = ExtractZip(filePath);
                 if (playPath == null) return;
@@ -96,8 +95,8 @@ namespace KaraokeApp.Services
                 _mediaPlayer.Play(media);
             }
 
-            // Apply channel/track settings after a short delay to allow media to load
-            System.Threading.Tasks.Task.Delay(500).ContinueWith(_ =>
+            // Delay gives VLC time to load the audio tracks before we switch
+            System.Threading.Tasks.Task.Delay(800).ContinueWith(_ =>
             {
                 ApplyVocalSetting(_vocalOn, _hasVocalTrack);
                 ApplyVolume(_volume);
@@ -187,58 +186,51 @@ namespace KaraokeApp.Services
         public void SetVocal(bool on)
         {
             _vocalOn = on;
-            ApplyVocalSetting(on, _hasVocalTrack);
+            if (_mediaPlayer != null &&
+                (_mediaPlayer.IsPlaying || _mediaPlayer.State == VLCState.Paused))
+            {
+                ApplyVocalSetting(on, _hasVocalTrack);
+            }
         }
 
         private void ApplyVocalSetting(bool vocalOn, bool hasVocalTrack)
         {
             if (_mediaPlayer == null) return;
-
-            if (hasVocalTrack)
+            try
             {
-                // Multi-track file: switch between audio tracks.
-                // LibVLCSharp 3.x: AudioTrack is read-only; use SetAudioTrack(id) instead.
-                try
+                if (hasVocalTrack)
                 {
+                    // Song has a separate vocal file — switch audio tracks
+                    // Track index 1 = first real track (disable = index 0 in LibVLC)
                     var tracks = _mediaPlayer.AudioTrackDescription;
                     if (tracks != null && tracks.Length > 1)
                     {
-                        // track[0] is typically "Disable", track[1] = first real track, etc.
-                        // Vocal OFF → first real track (index 1, i.e. instrumental)
-                        // Vocal ON  → second real track (index 2, i.e. vocal mix)
-                        int trackIdx = vocalOn
+                        // tracks[0] is usually "Disable", tracks[1] = instrumental, tracks[2] = vocal
+                        int trackId = vocalOn
                             ? (tracks.Length > 2 ? tracks[2].Id : tracks[1].Id)
                             : tracks[1].Id;
-                        _mediaPlayer.SetAudioTrack(trackIdx);
+                        _mediaPlayer.SetAudioTrack(trackId);
                     }
                 }
-                catch { /* media not yet ready */ }
-            }
-            else
-            {
-                // Channel/mix mode switching via LibVLCSharp 3.x MediaPlayer.
-                // LibVLCSharp 3.x exposes audio stereo mode via the underlying VLC option.
-                // We set the "audio-channels" VLC option:
-                //   stereo=2, mono=1, rstereo=3, left=3, right=4
-                // The cleanest cross-version approach is to use VLC's audio output channel:
-                try
+                else
                 {
-                    if (vocalOn)
+                    // No separate track — use channel switching via P/Invoke
+                    // Channel: 1=Stereo, 2=RStereo, 3=Left, 4=Right
+                    // Vocal OFF (default) = Right channel only = instrumental on most karaoke files
+                    // Vocal ON            = Stereo = both channels (vocal + instrumental)
+                    int channel = vocalOn ? 1 : 3;
+                    try
                     {
-                        // Stereo — both channels (vocal + instrumental)
-                        _mediaPlayer.SetAudioTrack(1); // re-enable full stereo track
-                        // Tell VLC to use stereo mix (channel 1 = stereo in libvlc terms)
-                        SetVlcAudioChannel(1);
+                        NativeMethods.libvlc_audio_set_channel(
+                            _mediaPlayer.NativeReference, channel);
                     }
-                    else
+                    catch
                     {
-                        // Right channel only = instrumental on most karaoke formats
-                        // libvlc audio channel: 1=stereo, 2=reverse, 3=left, 4=right, 5=mono
-                        SetVlcAudioChannel(4);
+                        // P/Invoke failed — media may not be loaded yet, will retry on next call
                     }
                 }
-                catch { /* media not yet ready */ }
             }
+            catch { /* media not ready, ignore */ }
         }
 
         /// <summary>

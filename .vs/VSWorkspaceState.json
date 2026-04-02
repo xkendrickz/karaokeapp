@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\KaraokeApp"
+    "\\KaraokeApp",
+    "\\KaraokeApp\\Services"
   ],
   "SelectedNode": "\\KaraokeApp\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false

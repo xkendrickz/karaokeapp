@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KaraokeApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a85c8d1e9ae7557bf36b27e4e3560bd83dc9f50")]
 [assembly: System.Reflection.AssemblyProductAttribute("KaraokeApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KaraokeApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
