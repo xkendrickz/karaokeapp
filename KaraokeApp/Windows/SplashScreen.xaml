@@ -1,0 +1,119 @@
+<Window x:Class="KaraokeApp.Windows.SplashScreenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Width="600" Height="380"
+        AllowsTransparency="True"
+        Background="Transparent">
+
+    <Border CornerRadius="16" ClipToBounds="True">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#080D1A" Offset="0"/>
+                <GradientStop Color="#0F1A35" Offset="0.5"/>
+                <GradientStop Color="#14103A" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid>
+            <!-- Outer glow ring -->
+            <Ellipse Width="220" Height="220"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Margin="0,0,0,60">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#1522D3EE" Offset="0.6"/>
+                        <GradientStop Color="#0022D3EE" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Margin="0,0,0,60">
+
+                <!-- Mic icon -->
+                <Border Width="90" Height="90" CornerRadius="45"
+                        HorizontalAlignment="Center" Margin="0,0,0,16">
+                    <Border.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#1E3A5F" Offset="0"/>
+                            <GradientStop Color="#0A1626" Offset="1"/>
+                        </RadialGradientBrush>
+                    </Border.Background>
+                    <Border.Effect>
+                        <DropShadowEffect Color="#22D3EE" ShadowDepth="0"
+                                          BlurRadius="24" Opacity="0.5"/>
+                    </Border.Effect>
+                    <TextBlock Text="🎤" FontSize="42"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+
+                <!-- App name -->
+                <TextBlock x:Name="TitleText"
+                           Text="KARAOKE PLAYER"
+                           Foreground="#22D3EE"
+                           FontFamily="Segoe UI"
+                           FontSize="28" FontWeight="ExtraBold"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,4">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="#22D3EE" ShadowDepth="0"
+                                          BlurRadius="16" Opacity="0.7"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+
+                <TextBlock Text="Loading your music experience..."
+                           Foreground="#475569"
+                           FontFamily="Segoe UI"
+                           FontSize="12"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,0"/>
+            </StackPanel>
+
+            <!-- Bottom section -->
+            <StackPanel VerticalAlignment="Bottom" Margin="40,0,40,30">
+
+                <!-- Status text -->
+                <TextBlock x:Name="StatusText"
+                           Text="Initializing..."
+                           Foreground="#64748B"
+                           FontFamily="Segoe UI"
+                           FontSize="11"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,8"/>
+
+                <!-- Progress bar track -->
+                <Border Height="6" CornerRadius="3" Background="#1E3A5F">
+                    <Border x:Name="ProgressFill"
+                            HorizontalAlignment="Left"
+                            Width="0"
+                            CornerRadius="3">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#0E7490" Offset="0"/>
+                                <GradientStop Color="#22D3EE" Offset="0.7"/>
+                                <GradientStop Color="#A5F3FC" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.Effect>
+                            <DropShadowEffect Color="#22D3EE" ShadowDepth="0"
+                                              BlurRadius="6" Opacity="0.8"/>
+                        </Border.Effect>
+                    </Border>
+                </Border>
+
+                <!-- Version -->
+                <TextBlock Text="v1.0.0"
+                           Foreground="#1E3A5F"
+                           FontFamily="Segoe UI"
+                           FontSize="10"
+                           HorizontalAlignment="Right"
+                           Margin="0,6,0,0"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

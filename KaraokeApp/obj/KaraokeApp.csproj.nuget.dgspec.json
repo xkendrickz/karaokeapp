@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj": {}
+    "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj": {
+    "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj",
         "projectName": "KaraokeApp",
-        "projectPath": "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj",
+        "projectPath": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\obj\\",
+        "outputPath": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "net48": {
+            "framework": "net48",
             "targetAlias": "net48",
             "projectReferences": {}
           }
@@ -44,6 +45,7 @@
       },
       "frameworks": {
         "net48": {
+          "framework": "net48",
           "targetAlias": "net48",
           "dependencies": {
             "LibVLCSharp": {
@@ -58,6 +60,10 @@
               "target": "Package",
               "version": "[1.0.2739.15, )"
             },
+            "NAudio": {
+              "target": "Package",
+              "version": "[2.2.1, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -71,7 +77,7 @@
               "version": "[3.0.21, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

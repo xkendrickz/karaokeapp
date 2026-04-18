@@ -1,22 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\asus\\Desktop\\KaraokeApp\\",
+  "WorkspaceRootPath": "C:\\Users\\asus\\KaraokeApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\Services\\VlcPlayerService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KaraokeApp\\Services\\VlcPlayerService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\App.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KaraokeApp\\App.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\App.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KaraokeApp\\App.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\Windows\\SplashScreenWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KaraokeApp\\Windows\\SplashScreenWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\Windows\\SplashScreen.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KaraokeApp\\Windows\\SplashScreen.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KaraokeApp\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\MainWindow.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\MainWindow.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KaraokeApp\\MainWindow.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\Services\\VlcPlayerService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KaraokeApp\\Services\\VlcPlayerService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KaraokeApp\\KaraokeApp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\Services\\YoutubeService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KaraokeApp\\Services\\YoutubeService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +46,120 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VlcPlayerService.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\Services\\VlcPlayerService.cs",
-              "RelativeDocumentMoniker": "KaraokeApp\\Services\\VlcPlayerService.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\Services\\VlcPlayerService.cs",
-              "RelativeToolTip": "KaraokeApp\\Services\\VlcPlayerService.cs",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAAANUAAAARAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "SplashScreenWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\Windows\\SplashScreenWindow.xaml.cs",
+              "RelativeDocumentMoniker": "KaraokeApp\\Windows\\SplashScreenWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\Windows\\SplashScreenWindow.xaml.cs",
+              "RelativeToolTip": "KaraokeApp\\Windows\\SplashScreenWindow.xaml.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowD4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T12:31:58.075Z",
+              "WhenOpened": "2026-04-18T09:29:31.335Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "SplashScreen.xaml",
+              "DocumentMoniker": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\Windows\\SplashScreen.xaml",
+              "RelativeDocumentMoniker": "KaraokeApp\\Windows\\SplashScreen.xaml",
+              "ToolTip": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\Windows\\SplashScreen.xaml",
+              "RelativeToolTip": "KaraokeApp\\Windows\\SplashScreen.xaml",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAowHYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-18T09:29:02.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "KaraokeApp\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\MainWindow.xaml.cs",
               "RelativeToolTip": "KaraokeApp\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAmwJoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAG0CAAAAAAAAAAAowH4CAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-31T09:01:55.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\App.xaml",
+              "RelativeDocumentMoniker": "KaraokeApp\\App.xaml",
+              "ToolTip": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\App.xaml",
+              "RelativeToolTip": "KaraokeApp\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-17T17:16:23.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\App.xaml.cs",
+              "RelativeDocumentMoniker": "KaraokeApp\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\App.xaml.cs",
+              "RelativeToolTip": "KaraokeApp\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T17:16:25.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "VlcPlayerService.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\Services\\VlcPlayerService.cs",
+              "RelativeDocumentMoniker": "KaraokeApp\\Services\\VlcPlayerService.cs",
+              "ToolTip": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\Services\\VlcPlayerService.cs",
+              "RelativeToolTip": "KaraokeApp\\Services\\VlcPlayerService.cs",
+              "ViewState": "AgIAAA4BAAAAAAAAAIAwwBcBAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T12:31:58.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "KaraokeApp\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\MainWindow.xaml",
+              "RelativeToolTip": "KaraokeApp\\MainWindow.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-31T08:42:52.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "KaraokeApp.csproj",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj",
+              "DocumentMoniker": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj",
               "RelativeDocumentMoniker": "KaraokeApp\\KaraokeApp.csproj",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj",
+              "ToolTip": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\KaraokeApp.csproj",
               "RelativeToolTip": "KaraokeApp\\KaraokeApp.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAiwA8AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-03-31T08:55:04.437Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "KaraokeApp\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\KaraokeApp\\KaraokeApp\\MainWindow.xaml",
-              "RelativeToolTip": "KaraokeApp\\MainWindow.xaml",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAwwIsAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-31T08:42:52.358Z",
-              "EditorCaption": ""
+              "DocumentIndex": 8,
+              "Title": "YoutubeService.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\Services\\YoutubeService.cs",
+              "RelativeDocumentMoniker": "KaraokeApp\\Services\\YoutubeService.cs",
+              "ToolTip": "C:\\Users\\asus\\KaraokeApp\\KaraokeApp\\Services\\YoutubeService.cs",
+              "RelativeToolTip": "KaraokeApp\\Services\\YoutubeService.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEUAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T06:01:25.268Z"
             }
           ]
         }

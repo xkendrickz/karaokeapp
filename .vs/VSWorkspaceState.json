@@ -2,8 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\KaraokeApp",
-    "\\KaraokeApp\\Services"
+    "\\KaraokeApp\\bin",
+    "\\KaraokeApp\\Resources",
+    "\\KaraokeApp\\Services",
+    "\\KaraokeApp\\Windows",
+    "\\KaraokeApp\\{Models,Data,Services,Windows,Converters,Resources}"
   ],
-  "SelectedNode": "\\KaraokeApp\\MainWindow.xaml.cs",
+  "SelectedNode": "\\KaraokeApp\\Services\\VlcPlayerService.cs",
   "PreviewInSolutionExplorer": false
 }

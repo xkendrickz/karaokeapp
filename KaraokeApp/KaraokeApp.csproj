@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -17,11 +17,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ffmpeg.exe" />
+    <None Remove="yt-dlp.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ffmpeg.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="yt-dlp.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <!-- System.Net.Http must be explicitly referenced in .NET 4.8 -->
     <Reference Include="System.Net.Http" />
     <!-- System.IO.Compression for ZIP extraction -->
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
     <!-- SQLite embedded database -->
     <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
     <!-- VLC media player wrapper (supports MP4, MKV, MPG, DAT, CDG, M4A, etc.) -->

@@ -31,6 +31,8 @@ namespace KaraokeApp
         private bool _isAnySongLoaded = false;
         private Song _currentSong     = null;
 
+        private Style _catBtnStyle;
+
         // Progress bar timer (updates every 500ms)
         private DispatcherTimer _progressTimer;
 
@@ -41,11 +43,24 @@ namespace KaraokeApp
         public MainWindow()
         {
             InitializeComponent();
+            _settings = new AppSettings();
             Loaded += MainWindow_Loaded;
+            _catBtnStyle = (Style)FindResource("CatBtn");
         }
 
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                // Set Windows master volume to 100%
+                var enumerator = new NAudio.CoreAudioApi.MMDeviceEnumerator();
+                var device = enumerator.GetDefaultAudioEndpoint(
+                    NAudio.CoreAudioApi.DataFlow.Render,
+                    NAudio.CoreAudioApi.Role.Multimedia);
+                device.AudioEndpointVolume.MasterVolumeLevelScalar = 1.0f; // 1.0 = 100%
+            }
+            catch { /* ignore if audio device not available */ }
+
             try
             {
                 await YoutubeWebView.EnsureCoreWebView2Async();
@@ -64,6 +79,7 @@ namespace KaraokeApp
             _progressTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(400) };
             _progressTimer.Tick += ProgressTimer_Tick;
             _progressTimer.Start();
+            YoutubeHelper.CleanupTempFiles();
 
             _settings = _db.LoadSettings();
             ApplySettings();
@@ -118,12 +134,14 @@ namespace KaraokeApp
 
         private void SaveCurrentSettings()
         {
-            _settings.Volume         = (int)VolumeSlider.Value;
+            if (_settings == null) return;  // ← add this line
+
+            _settings.Volume = (int)VolumeSlider.Value;
             _settings.PitchSemitones = (int)PitchSlider.Value;
-            _settings.VocalOn        = BtnVocal.IsChecked == true;
-            _settings.Repeat         = BtnRepeat.IsChecked == true;
+            _settings.VocalOn = BtnVocal.IsChecked == true;
+            _settings.Repeat = BtnRepeat.IsChecked == true;
             _settings.LastCategoryId = _activeCategoryId;
-            _settings.LastTab        = _isYoutubeTab ? 1 : 0;
+            _settings.LastTab = _isYoutubeTab ? 1 : 0;
             _db.SaveSettings(_settings);
         }
 
@@ -146,8 +164,8 @@ namespace KaraokeApp
             var btn = new ToggleButton
             {
                 Content = cat.Name.ToUpper(),
-                Style   = (Style)Application.Current.FindResource("CatBtn"),
-                Tag     = cat.Id
+                Style = _catBtnStyle,
+                Tag = cat.Id
             };
             btn.Click += CategoryButton_Click;
             _categoryButtons.Add(btn);
@@ -288,21 +306,31 @@ namespace KaraokeApp
         {
             string query = YoutubeSearchBox.Text.Trim();
             if (string.IsNullOrEmpty(query)) return;
+
             if (!_yt.HasApiKey)
             {
-                MessageBox.Show("No YouTube API key. Go to SETTING → YouTube tab.",
+                MessageBox.Show(
+                    "No YouTube API key set.\n\nGo to SETTING → YouTube tab → enter your key.",
                     "Missing API Key", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+
             YoutubeLoadingOverlay.Visibility = Visibility.Visible;
             YoutubeListView.ItemsSource = null;
-            try   { YoutubeListView.ItemsSource = await _yt.SearchAsync(query); }
+
+            try
+            {
+                YoutubeListView.ItemsSource = await _yt.SearchAsync(query);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("YouTube search failed:\n" + ex.Message,
                     "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            finally { YoutubeLoadingOverlay.Visibility = Visibility.Collapsed; }
+            finally
+            {
+                YoutubeLoadingOverlay.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void BtnYoutubeLibrary_Click(object sender, RoutedEventArgs e)
@@ -404,14 +432,48 @@ namespace KaraokeApp
             _vlc.PitchSemitones = (int)PitchSlider.Value;
         }
 
-        private void PlayYoutubeVideo(Song song)
+        private async void PlayYoutubeVideo(Song song)
         {
-            _vlc.Stop();
-            VideoView.Visibility        = Visibility.Collapsed;
-            YoutubeWebView.Visibility   = Visibility.Visible;
-            VideoPlaceholder.Visibility = Visibility.Collapsed;
-            string url = YoutubeService.GetEmbedUrl(song.YoutubeId);
-            if (!string.IsNullOrEmpty(url)) YoutubeWebView.Source = new Uri(url);
+            VideoView.Visibility = Visibility.Visible;
+            YoutubeWebView.Visibility = Visibility.Collapsed;
+            VideoPlaceholder.Visibility = Visibility.Visible;
+            NowPlayingText.Text = "⏳ Downloading...";
+            NowPlayingArtist.Text = "This may take 10–30 seconds";
+
+            string tempFile = null;
+            try
+            {
+                tempFile = await YoutubeHelper.GetYoutubeStreamUrlAsync(song.YoutubeUrl);
+                if (Application.Current == null) return;
+            }
+            catch (Exception ex)
+            {
+                // Reset state so the app doesn't freeze
+                _isAnySongLoaded = false;
+                ShowIdle();
+                MessageBox.Show(
+                    "Could not download YouTube video:\n\n" + ex.Message,
+                    "YouTube Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            try
+            {
+                if (Application.Current == null) return;
+                VideoPlaceholder.Visibility = Visibility.Collapsed;
+                _vlc.PlayFile(tempFile, BtnVocal.IsChecked == true, false);
+                _vlc.Volume = (int)VolumeSlider.Value;
+                _vlc.PitchSemitones = (int)PitchSlider.Value;
+                ShowNowPlaying(song.Title, song.Artist);
+            }
+            catch (Exception ex)
+            {
+                _isAnySongLoaded = false;
+                ShowIdle();
+                MessageBox.Show(
+                    "Downloaded OK but failed to play:\n\n" + ex.Message,
+                    "Playback Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void ShowNowPlaying(string title, string artist)

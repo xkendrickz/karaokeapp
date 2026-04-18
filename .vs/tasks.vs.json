@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-yt-dlp",
+      "appliesTo": "KaraokeApp/bin/Debug/net48/yt-dlp.exe",
+      "type": "launch"
+    }
+  ]
+}
