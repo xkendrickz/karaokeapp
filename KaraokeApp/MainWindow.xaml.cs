@@ -32,6 +32,7 @@ namespace KaraokeApp
         private Song _currentSong     = null;
 
         private Style _catBtnStyle;
+        private bool _isSeeking = false;
 
         // Progress bar timer (updates every 500ms)
         private DispatcherTimer _progressTimer;
@@ -93,12 +94,12 @@ namespace KaraokeApp
         {
             try
             {
-                long len  = _vlc.Length;
+                long len = _vlc.Length;
                 long time = _vlc.Time;
                 if (len > 0)
                 {
                     SongProgress.Maximum = len;
-                    SongProgress.Value   = time;
+                    SongProgress.Value = time;
                     var cur = TimeSpan.FromMilliseconds(time);
                     var tot = TimeSpan.FromMilliseconds(len);
                     VideoTimeDisplay.Text = string.Format("{0}:{1:D2} / {2}:{3:D2}",
@@ -107,7 +108,7 @@ namespace KaraokeApp
                 }
                 else
                 {
-                    SongProgress.Value    = 0;
+                    SongProgress.Value = 0;
                     VideoTimeDisplay.Text = "";
                 }
             }
@@ -633,6 +634,58 @@ namespace KaraokeApp
             SaveCurrentSettings();
             try { _vlc.Stop(); }  catch { }
             try { _vlc.Dispose(); } catch { }
+        }
+
+        private void SongProgress_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            _isSeeking = true;
+        }
+
+        private void SongProgress_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Hook into the slider's thumb drag events after it renders
+            var slider = sender as Slider;
+            if (slider == null) return;
+
+            var thumb = (slider.Template.FindName("PART_Track", slider) as System.Windows.Controls.Primitives.Track)?.Thumb;
+            if (thumb != null)
+            {
+                thumb.DragStarted += (s, ev) => _isSeeking = true;
+                thumb.DragCompleted += (s, ev) =>
+                {
+                    if (_vlc.Length > 0)
+                        _vlc.SeekTo((long)SongProgress.Value);
+                    _isSeeking = false;
+                };
+            }
+        }
+
+        private void SongProgress_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            // Only seek on mouse click (not drag, not timer update)
+            if (!_isSeeking && _vlc.Length > 0 &&
+                System.Windows.Input.Mouse.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
+            {
+                _vlc.SeekTo((long)e.NewValue);
+            }
+        }
+
+        private void SongProgress_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (_vlc.Length <= 0) return;
+
+            var border = sender as Border;
+            if (border == null) return;
+
+            // Calculate click position as a ratio of the bar width
+            double clickX = e.GetPosition(border).X;
+            double ratio = clickX / border.ActualWidth;
+            long seekTo = (long)(ratio * _vlc.Length);
+
+            _vlc.SeekTo(seekTo);
+
+            // Update progress bar immediately so it doesn't snap back
+            SongProgress.Value = seekTo;
         }
     }
 }

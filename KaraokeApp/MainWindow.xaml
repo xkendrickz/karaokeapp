@@ -410,10 +410,15 @@
         <!-- ═══════════════════════════════════════════════════════
              ROW 2 — SONG PROGRESS BAR (neon thin strip)
              ═══════════════════════════════════════════════════════ -->
-        <ProgressBar x:Name="SongProgress"
-                     Grid.Row="2"
-                     Style="{StaticResource NeonProgressBar}"
-                     Minimum="0" Maximum="100" Value="0"/>
+		<Grid Grid.Row="2">
+            <ProgressBar x:Name="SongProgress"
+                         Style="{StaticResource NeonProgressBar}"
+                         Minimum="0" Maximum="100" Value="0"/>
+            <!-- Transparent overlay captures mouse clicks for seeking -->
+            <Border Background="Transparent"
+                    Cursor="Hand"
+                    MouseLeftButtonDown="SongProgress_Click"/>
+        </Grid>
 
         <!-- ═══════════════════════════════════════════════════════
              ROW 3 — CONTROL BAR
