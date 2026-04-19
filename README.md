@@ -2,14 +2,6 @@
 
 A full-featured desktop karaoke application built with **WPF (.NET Framework 4.8)** and **LibVLCSharp**. Designed with a dark karaoke-themed UI featuring neon cyan accents, smooth animations, and a focus on the singing experience.
 
----
-
-## Screenshots
-
-> Add your screenshots here after taking them from the running app.
-
----
-
 ## Features
 
 ### Playback
