@@ -524,6 +524,7 @@
                                     Minimum="0" Maximum="100" Value="100"
                                     SmallChange="5" LargeChange="10"
                                     Style="{StaticResource DarkSlider}"
+                                    IsMoveToPointEnabled="True"
                                     VerticalAlignment="Center" Margin="4,0"
                                     ValueChanged="VolumeSlider_ValueChanged"/>
                             <Button Grid.Column="2" Content="+"
@@ -583,6 +584,7 @@
                                     Minimum="-12" Maximum="12" Value="0"
                                     SmallChange="1" LargeChange="2"
                                     Style="{StaticResource DarkSlider}"
+                                    IsMoveToPointEnabled="True"
                                     VerticalAlignment="Center" Margin="4,0"
                                     ValueChanged="PitchSlider_ValueChanged"/>
                             <Button Grid.Column="2" Content="+"
