@@ -1,0 +1,65 @@
+# ── Build output ──────────────────────────────────────────────
+bin/
+obj/
+out/
+
+# ── Visual Studio ─────────────────────────────────────────────
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# ── NuGet packages (restored automatically on build) ──────────
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# ── SQLite database (user data, not source code) ──────────────
+*.db
+*.db-shm
+*.db-wal
+
+# ── YouTube temp files ────────────────────────────────────────
+KaraokeApp_yt_*
+
+# ── yt-dlp and ffmpeg binaries (too large, users download own) ─
+yt-dlp.exe
+ffmpeg.exe
+ffprobe.exe
+
+# ── WebView2 user data folder (generated at runtime) ──────────
+**/KaraokeApp.exe.WebView2/
+
+# ── LibVLC native binaries (installed via NuGet, not committed) ─
+**/libvlc/
+**/*.dll
+!KaraokeApp/**/*.dll
+
+# ── OS files ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE / editor ──────────────────────────────────────────────
+*.swp
+*.orig
+*~
+.idea/
+*.DotSettings
+*.DotSettings.user
+
+# ── Logs and crash dumps ──────────────────────────────────────
+*.log
+*.txt.bak
+crash_*.txt
+
+# ── Publish output ────────────────────────────────────────────
+publish/
+PublishProfiles/
+
+# ── Test results ──────────────────────────────────────────────
+TestResults/
+*.trx
